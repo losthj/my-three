@@ -17,3 +17,5 @@ dispatch(action)  (previousState,action)
 (图书馆管理员)createStore
 
 (笔记本) reducer  中state所存储的数据 --指仓库中所有的数据
+
+<img src="http://awsinst.com/github/store.png ait="" />
