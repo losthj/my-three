@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Input,Button,List } from 'antd';
 import 'antd/dist/antd.css';
-import store from './store/index'
+import store from './store/index';
+import {getInputChangeAction,getAddItemAction,getDeleteItemAction} from './store/actionCreators'
+// import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM} from './store/actionTypes'
+
 
 // const data = [
 //     'Racing car sprays burning fuel into crowd.',
@@ -39,8 +42,8 @@ class TodoList extends Component {
                     style={{marginTop:'10px',width:'400px'}}
                     bordered
                     dataSource={this.state.list}
-                    renderItem={item => (
-                        <List.Item>
+                    renderItem={(item,index) => (
+                        <List.Item onClick={this.handleItemDelete.bind(this,index)}>
                          {item}
                         </List.Item>
                     )}
@@ -50,10 +53,11 @@ class TodoList extends Component {
     }
 
     handleInputChange(e){
-        const action = {
-            type:'change_input_value',
-            value:e.target.value
-        }
+        // const action = {
+        //     type:CHANGE_INPUT_VALUE,
+        //     value:e.target.value
+        // }
+        const action = getInputChangeAction(e.target.value)
         store.dispatch(action);
     }
 
@@ -62,9 +66,18 @@ class TodoList extends Component {
     }
 
     handleBtnClick(){
-        const action = {
-            type:'add_todo_item'
-        }
+        // const action = {
+        //     type:ADD_TODO_ITEM
+        // }
+        const action = getAddItemAction();
+        store.dispatch(action)
+    }
+    handleItemDelete(index){
+        // const action ={
+        //     type:DELETE_TODO_ITEM,
+        //     index
+        // }
+        const action = getDeleteItemAction(index);
         store.dispatch(action)
     }
 }
