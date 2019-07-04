@@ -35,5 +35,18 @@ store是唯一的
 
 Reducer必须是纯函数  纯函数指的是，给定固定的输入，就一定会有固定的输出，而且不会有任何副作用
 
+createStroe ->   store.dispatch   ->   store.getState    ->   store.subscribe
 
+
+### Redux的进阶
+
+UI组件与容器组件的拆分
+
+UI组件专门做渲染  容器组件专门做逻辑
+
+无状态组件   一个函数
+
+Redux中发送异步请求获取数据
+
+使用Redux-thunk中间件进行ajax请求发送
 
