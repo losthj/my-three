@@ -50,3 +50,11 @@ Redux中发送异步请求获取数据
 
 使用Redux-thunk中间件进行ajax请求发送
 
+到底什么是Redux中间件？
+
+![Image text](http://awsinst.com/github/store1.png )
+
+redux指的是对dispatch的封装或者叫升级
+
+### Redux-saga中间件的使用
+
