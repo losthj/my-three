@@ -1,5 +1,5 @@
 import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM,INIT_LIST_ACTION} from './actionTypes';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 export const getInputChangeAction = (value) => ({
@@ -21,15 +21,14 @@ export const initListAction = (data) => ({
     data
 })
 
-export const getTodoList = () =>{
-    return (dispatch) => {
-        axios.get('/list.json').then((res) =>{
-        const data = res.data;
-        const action = initListAction(data)
-        dispatch(action)
-       // console.log(data)
-        // const action = initListAction(data)
-        // store.dispatch(action);
-    })
-    }
-}
+
+//redex-thunk中间件的使用方式
+// export const getTodoList = () =>{
+//     return (dispatch) => {
+//             axios.get('/list.json').then((res) =>{
+//             const data = res.data;
+//             const action = initListAction(data)
+//             dispatch(action)
+//         })
+//     }
+// }

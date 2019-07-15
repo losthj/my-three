@@ -58,3 +58,9 @@ redux指的是对dispatch的封装或者叫升级
 
 ### Redux-saga中间件的使用
 
+https://github.com/redux-saga/redux-saga
+
+异步代码拆分处理的
+
+### react-Redux的使用
+
